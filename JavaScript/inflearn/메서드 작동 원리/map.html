@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>map</title>
+  </head>
+  <body>
+    <script>
+      //map : 원본 배열 활용하여 새로운 배열을 생성 (요소 하나씩 탐색)
+      // 새로운 배열의 길이 === 원본 배열의 길이 -> return 값이 없을 경우 undefined
+
+      //function map(predicate, thisArg){
+      // let list=[]
+      // for(let i=0; i<a.length; i++){
+      // list.push(predicate(a[i],i));
+      // }
+      // return list;
+      // }
+      a = [10, 11, 12, 13, 14, 15];
+      let answer = a.map(
+        function (v, i) {
+          if (v % 2 == 0) return v;
+        },
+        [1, 2]
+      );
+      console.log(answer);
+      //v == 배열의 요소, i == 인덱스
+    </script>
+  </body>
+</html>

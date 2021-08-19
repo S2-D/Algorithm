@@ -8,7 +8,7 @@
       function solution(day, arr) {
         let answer = 0;
         for (let x of arr) {
-          if (day === x % 10) answer += 1;
+          if (day === x % 10) answer++;
         }
         return answer;
       }
