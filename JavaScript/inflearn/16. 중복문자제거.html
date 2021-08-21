@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        //set 활용
+        // let answer = [...new Set(s)].join("");
+        // return answer;
+
+        //indexOf 활용
+        let answer = "";
+        console.log(s.indexOf("k"));
+        for (let i = 0; i < s.length; i++) {
+          //console.log(s[i], i, s.indexOf(s[i]));
+          if (s.indexOf(s[i]) === i) answer += s[i];
+        }
+        return answer;
+      }
+      console.log(solution("ksetkset"));
+    </script>
+  </body>
+</html>
