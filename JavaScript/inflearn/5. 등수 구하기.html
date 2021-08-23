@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [],
+          sortedArr = [...arr];
+        sortedArr.sort(function (a, b) {
+          return b - a;
+        });
+
+        console.log(sortedArr.includes(100));
+        arr.forEach((v, i) => {
+          if (sortedArr.includes(v)) {
+            answer.push(sortedArr.indexOf(v) + 1);
+          }
+        });
+        return answer;
+      }
+
+      let arr = [87, 89, 92, 100, 76];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
