@@ -6,18 +6,26 @@
   <body>
     <script>
       function solution(arr) {
-        let answer = [],
-          sortedArr = [...arr];
-        sortedArr.sort(function (a, b) {
-          return b - a;
-        });
+        // let answer = [],
+        //   sortedArr = [...arr];
+        // sortedArr.sort(function (a, b) {
+        //   return b - a;
+        // });
+        // console.log(sortedArr.includes(100));
+        // arr.forEach((v, i) => {
+        //   if (sortedArr.includes(v)) {
+        //     answer.push(sortedArr.indexOf(v) + 1);
+        //   }
+        // });
+        // return answer;
 
-        console.log(sortedArr.includes(100));
-        arr.forEach((v, i) => {
-          if (sortedArr.includes(v)) {
-            answer.push(sortedArr.indexOf(v) + 1);
+        let n = arr.length;
+        let answer = Array.from({ length: n }, () => 1);
+        for (let i in arr) {
+          for (let j in arr) {
+            if (arr[j] > arr[i]) answer[i]++;
           }
-        });
+        }
         return answer;
       }
 
