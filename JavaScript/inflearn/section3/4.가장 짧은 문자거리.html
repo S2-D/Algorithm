@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = [];
+        let idxArr = [];
+        while (s.includes(t)) {
+          console.log("t가 s에 포함되어있나?", s.includes(t));
+          idx = s.indexOf(t);
+          console.log("그렇다면 t의 index는?", idx);
+          idxArr.push(idx);
+          console.log("그걸 새 배열에 넣어주자", idxArr);
+          s = s.replace(t, t.toUpperCase());
+          console.log("카운트한 t는 대문자로", s);
+        }
+
+        // 최소 거리 판별
+        for (let i in s) {
+          let maxArr = [];
+          for (let j of idxArr) {
+            maxArr.push(Math.abs(i - j));
+            console.log(Math.abs(i - j));
+          }
+          answer.push(Math.min.apply(null, maxArr));
+        }
+        return answer;
+      }
+
+      let str = "teachermode";
+      console.log(solution(str, "e"));
+    </script>
+  </body>
+</html>
