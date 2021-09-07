@@ -10,6 +10,16 @@
         s = s.toLowerCase().replace(/[^a-z]/g, "");
         if (s.split("").reverse().join("") !== s) return "NO";
         return answer;
+        
+//         let answer = "YES"
+//         let pattern_eng = /[A-Z]/;
+//         s= s.toUpperCase()
+//         arr = s.split("")
+//         let result = arr.filter(str =>pattern_eng.test(str));
+//         const result1 = result.join("")
+//         const result2 = result.reverse().join("")
+//         if (result1 != result2) return answer = "NO"
+//         return answer
       }
 
       let str = "found7, time: study; Yduts; emit, 7Dnuof";
