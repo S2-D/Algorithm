@@ -5,15 +5,32 @@
   </head>
   <body>
     <script>
+      // function solution(s) {
+      //   let answer;
+      //   let stack = [];
+      //   for (let x of s) {
+      //     if (x === ")") {
+      //       while (stack.pop() !== "(");
+      //     } else stack.push(x);
+      //   }
+      //   answer = stack.join("");
+      //   return answer;
+      // }
+
       function solution(s) {
-        let answer;
+        let answer = "";
         let stack = [];
         for (let x of s) {
-          if (x === ")") {
-            while (stack.pop() !== "(");
-          } else stack.push(x);
+          if (x == "(") {
+            stack.push(x);
+          } else if (x == ")") {
+            stack.pop();
+          } else if (stack.includes("(")) {
+            console.log("no");
+          } else {
+            answer += x;
+          }
         }
-        answer = stack.join("");
         return answer;
       }
 
