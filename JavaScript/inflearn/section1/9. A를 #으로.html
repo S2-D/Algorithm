@@ -5,30 +5,38 @@
   </head>
   <body>
     <script>
-      function solution(s) {
-        // 1. 문자열 -> 배열 -> 문자열
-        // let answer;
-        // const arr = s.split("");
-        // console.log(arr);
-        // arr1 = arr.map(function (v, i) {
-        //   if (v === "A") return (arr[i] = "#");
-        //   else return (arr[i] = arr[i]);
-        // });
-        // answer = arr1.join("");
-        // return answer;
-
-        // 2. replace, 정규표현식 활용
-        // let answer = s;
-        // answer = s.replace(/A/g, "#");
-        // return answer;
-
+      const solution = (s) => {
         let answer = "";
-        for (let x of s) {
-          if (x === "A") answer += "#";
-          else answer += x;
-        }
+        s.split("").forEach((v, i) => {
+          v === "A" ? (answer += "#") : (answer += v);
+        });
         return answer;
-      }
+      };
+
+      // function solution(s) {
+      //   // 1. 문자열 -> 배열 -> 문자열
+      //   // let answer;
+      //   // const arr = s.split("");
+      //   // console.log(arr);
+      //   // arr1 = arr.map(function (v, i) {
+      //   //   if (v === "A") return (arr[i] = "#");
+      //   //   else return (arr[i] = arr[i]);
+      //   // });
+      //   // answer = arr1.join("");
+      //   // return answer;
+
+      //   // 2. replace, 정규표현식 활용
+      //   // let answer = s;
+      //   // answer = s.replace(/A/g, "#");
+      //   // return answer;
+
+      //   let answer = "";
+      //   for (let x of s) {
+      //     if (x === "A") answer += "#";
+      //     else answer += x;
+      //   }
+      //   return answer;
+      // }
       let str = "BANANA";
       console.log(solution(str));
     </script>
